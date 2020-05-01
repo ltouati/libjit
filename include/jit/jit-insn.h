@@ -62,6 +62,7 @@ jit_value_t jit_insn_get_dest(jit_insn_t insn) JIT_NOTHROW;
 jit_value_t jit_insn_get_value1(jit_insn_t insn) JIT_NOTHROW;
 jit_value_t jit_insn_get_value2(jit_insn_t insn) JIT_NOTHROW;
 jit_label_t jit_insn_get_label(jit_insn_t insn) JIT_NOTHROW;
+void jit_insn_set_label(jit_insn_t insn,jit_label_t label) JIT_NOTHROW;
 jit_function_t jit_insn_get_function(jit_insn_t insn) JIT_NOTHROW;
 void *jit_insn_get_native(jit_insn_t insn) JIT_NOTHROW;
 const char *jit_insn_get_name(jit_insn_t insn) JIT_NOTHROW;

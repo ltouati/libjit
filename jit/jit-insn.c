@@ -935,7 +935,18 @@ jit_insn_get_value2(jit_insn_t insn)
 	}
 	return insn->value2;
 }
+void jit_insn_set_label(jit_insn_t insn,jit_label_t label)  {
+    if((insn->flags & JIT_INSN_DEST_IS_LABEL) != 0)
+    {
+        insn->dest = (jit_value_t)label;
+    }
+    if((insn->flags & JIT_INSN_VALUE1_IS_LABEL) != 0)
+    {
+        /* "address_of_label" instruction */
+        insn->value1 = (jit_value_t) label;
+    }
 
+}
 /*@
  * @deftypefun jit_label_t jit_insn_get_label (jit_insn_t @var{insn})
  * Get the label for a branch target from an instruction.

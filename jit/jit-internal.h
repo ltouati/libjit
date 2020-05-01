@@ -230,6 +230,7 @@ struct _jit_block
 {
 	jit_function_t		func;
 	jit_label_t		label;
+	char            *name;
 
 	/* List of all instructions in this block */
 	jit_insn_t		insns;

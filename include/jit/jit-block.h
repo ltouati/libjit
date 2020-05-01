@@ -40,6 +40,7 @@ jit_block_t jit_block_from_label(jit_function_t func,
 				 jit_label_t label) JIT_NOTHROW;
 int jit_block_set_meta(jit_block_t block, int type, void *data,
 		       jit_meta_free_func free_data) JIT_NOTHROW;
+void jit_block_set_label_name(jit_block_t block, const char *name) JIT_NOTHROW;
 void *jit_block_get_meta(jit_block_t block, int type) JIT_NOTHROW;
 void jit_block_free_meta(jit_block_t block, int type) JIT_NOTHROW;
 int jit_block_is_reachable(jit_block_t block) JIT_NOTHROW;
