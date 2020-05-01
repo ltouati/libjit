@@ -210,6 +210,8 @@ jit_value_t jit_insn_sign
 	(jit_function_t func, jit_value_t value1) JIT_NOTHROW;
 int jit_insn_branch
 	(jit_function_t func, jit_label_t *label) JIT_NOTHROW;
+int jit_insn_branch_with_meta
+	(jit_function_t func, jit_label_t *label,int type, void *data,jit_meta_free_func free_data) JIT_NOTHROW;
 int jit_insn_branch_if
 	(jit_function_t func, jit_value_t value, jit_label_t *label) JIT_NOTHROW;
 int jit_insn_branch_if_not
@@ -337,6 +339,11 @@ void jit_insn_iter_init_last
 	(jit_insn_iter_t *iter, jit_block_t block) JIT_NOTHROW;
 jit_insn_t jit_insn_iter_next(jit_insn_iter_t *iter) JIT_NOTHROW;
 jit_insn_t jit_insn_iter_previous(jit_insn_iter_t *iter) JIT_NOTHROW;
+
+int jit_insn_set_meta(jit_insn_t ins, int type, void *data,
+                       jit_meta_free_func free_data) JIT_NOTHROW;
+void *jit_insn_get_meta(jit_insn_t ins, int type) JIT_NOTHROW;
+void jit_insn_free_meta(jit_insn_t ins, int type) JIT_NOTHROW;
 
 #ifdef	__cplusplus
 };

@@ -319,6 +319,9 @@ struct _jit_insn
 	jit_value_t		dest;
 	jit_value_t		value1;
 	jit_value_t		value2;
+    /* Metadata */
+    jit_meta_t		meta;
+
 };
 
 /*
