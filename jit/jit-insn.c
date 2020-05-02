@@ -7733,3 +7733,7 @@ void *jit_insn_get_meta(jit_insn_t ins, int type) {
 void jit_insn_free_meta(jit_insn_t ins, int type) {
     jit_meta_free(&(ins->meta), type);
 }
+
+void jit_insn_destroy_meta(jit_insn_t ins) {
+    jit_meta_destroy(&(ins->meta));
+}
