@@ -344,6 +344,7 @@ int jit_insn_set_meta(jit_insn_t ins, int type, void *data,
                        jit_meta_free_func free_data) JIT_NOTHROW;
 void *jit_insn_get_meta(jit_insn_t ins, int type) JIT_NOTHROW;
 void jit_insn_free_meta(jit_insn_t ins, int type) JIT_NOTHROW;
+void jit_insn_destroy_meta(jit_insn_t ins) JIT_NOTHROW;
 
 #ifdef	__cplusplus
 };
